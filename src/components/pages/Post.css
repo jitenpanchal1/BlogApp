@@ -1,0 +1,144 @@
+/* Post.css */
+
+/* --- Main Wrapper --- */
+.post-page-wrapper {
+    background-color: #B0DB9C;
+    width: 70%;
+    margin: 0 auto;
+    font-family: 'Georgia', serif;
+    /* A classic serif font for readability */
+}
+
+/* --- Featured Image --- */
+.featured-image-container {
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    border-radius: 12px;
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); */
+}
+
+.post-image {
+    width: 100%;
+    /* margin: 0 auto; */
+    height: 100%;
+    /* object-fit: cover; */
+    object-fit:contain;
+    /* Ensures the image covers the container without distortion */
+}
+
+/* --- Post Header & Meta --- */
+.post-header {
+    margin-top: 2rem;
+}
+
+.post-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #212529;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.post-author {
+    font-style: italic;
+    color: #6c757d;
+}
+
+.author-actions .btn {
+    border-radius: 20px;
+    /* Pill-shaped buttons */
+    font-weight: 500;
+    padding: 0.25rem 1rem;
+}
+
+/* --- Post Content --- */
+.post-content {
+    color: #343a40;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* Ensure parsed HTML elements are styled correctly */
+.post-content p {
+    margin-bottom: 1.5rem;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.post-content a {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+/* --- Delete Confirmation Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content-custom {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 450px;
+    animation: slideIn 0.4s ease-out;
+}
+
+.modal-title-custom {
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+/* --- Animations for Modal --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 2rem;
+    }
+
+    .post-content {
+        font-size: 1.05rem;
+    }
+}
