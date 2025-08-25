@@ -36,7 +36,7 @@ const router = createBrowserRouter(
           element: (
             <Protect authentication={false}>
               <Signup />
-            // </Protect>
+            </Protect>
           )
         },
         {
@@ -52,7 +52,7 @@ const router = createBrowserRouter(
           element: (
             <Protect authentication>
               <Addpost />
-            // </Protect>
+            </Protect>
           )
         },
         {
@@ -75,7 +75,7 @@ const router = createBrowserRouter(
       ]
     }
   ],
-
+  { basename: "/BlogApp" }
 )
 
 createRoot(document.getElementById('root')).render(
