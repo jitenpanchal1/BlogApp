@@ -25,7 +25,7 @@ function Home() {
         return (
             <>
                 <div className="d-flex justify-content-center align-items-center" style={{ height: "300px" }}>
-                    <h1 className="text-center">There is no post Here .........</h1>
+                    <h1 className="text-center">There is no post Here u need to log in first</h1>
                 </div>
             </>
         )
