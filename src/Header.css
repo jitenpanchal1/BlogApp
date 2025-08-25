@@ -1,0 +1,125 @@
+/* ================= THEME (unchanged) ================= */
+:root {
+    --theme-bg: #e9f7e9;
+    /* light green */
+    --theme-primary: #2a7a2a;
+    /* green */
+    --theme-primary-10: rgba(42, 122, 42, .10);
+    --theme-border: rgba(0, 0, 0, .05);
+    --danger: #dc3545;
+    --danger-10: rgba(220, 53, 69, .10);
+}
+
+.custom-header {
+    background-color: var(--theme-bg);
+    border-bottom: 1px solid var(--theme-border);
+    z-index: 1030;
+}
+
+.text-theme {
+    color: var(--theme-primary) !important;
+}
+
+/* ================= NAV BUTTONS ================= */
+.nav-btn {
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--theme-primary);
+    background-color: var(--theme-primary-10);
+    color: var(--theme-primary);
+    font-weight: 600;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+    text-align: center;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background-color: var(--theme-primary);
+    color: #fff;
+}
+
+/* Logout (styles the inner button/link produced by <LogoutBtn/>) */
+.logout-btn :where(button, a) {
+    display: block;
+    width: 100%;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background-color: var(--danger-10);
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    font-weight: 600;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+    text-align: center;
+}
+
+.logout-btn :where(button, a):hover {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+/* ================= MOBILE PANEL (clean dropdown, same colors) ================= */
+.mobile-panel {
+    /* desktop inherits bootstrap behavior */
+}
+
+/* Mobile-specific layout + animation */
+@media (max-width: 767.98px) {
+    .navbar {
+        position: relative;
+    }
+
+    .mobile-panel {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: var(--theme-bg);
+        /* keep your previous color */
+        border-bottom: 1px solid var(--theme-border);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+        padding: 12px 16px;
+        z-index: 1050;
+
+        /* slide-down animation using max-height */
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s ease;
+    }
+
+    .mobile-panel.show {
+        max-height: 70vh;
+    }
+
+    /* reveals smoothly */
+
+    /* Stack links neatly, full width with equal rhythm */
+    .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-btn {
+        width: 100%;
+    }
+
+    .logout-item {
+        margin-top: 4px;
+    }
+}
+
+/* Desktop spacing */
+@media (min-width: 768px) {
+    .mobile-panel {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        max-height: none;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+}

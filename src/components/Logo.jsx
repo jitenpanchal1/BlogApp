@@ -1,9 +1,10 @@
 import React from 'react'
+import Sign from "../assets/Blog.png"
 
 function Logo() {
     return (
         <div>
-            <h1>logo</h1>
+            <img src={Sign} alt="Logo" style={{ height: '50px', width: '70px' }} />
         </div>
     )
 }
